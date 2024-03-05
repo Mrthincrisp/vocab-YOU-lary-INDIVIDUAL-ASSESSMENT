@@ -21,7 +21,6 @@ const domEvents = (uid) => {
     // View event
     if (e.target.id.includes('view-language-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn(getSingleLanguage());
       getSingleLanguage(firebaseKey).then(viewLanguage);
     }
 

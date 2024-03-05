@@ -9,8 +9,8 @@ const formEvents = (uid) => {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
-        timeSubmitted: Date.now(),
         language_id: document.querySelector('#language_id'),
+        timeSubmitted: Date.now(),
         uid,
       };
       createLanguage(payload).then(({ name }) => {

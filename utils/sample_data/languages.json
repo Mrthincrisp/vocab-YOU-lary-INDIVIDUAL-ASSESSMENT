@@ -27,7 +27,7 @@
     "firebaseKey": "-Ns-AmjgReHliZyCWNoN",
     "title": "SQL",
     "definition": "SQL is a standard database query language. It is used to access and manipulate data in databases. SQL is a declarative language that specifies the desired results, but not the steps to achieve those results. SQL is a powerful tool for accessing and manipulating data, and it is the world's most widely used database query language.",
-    "timeSubmitted": "2023-06-20 09:12:48",
+    "timeSubmitted": "1709605440899",
     "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43",
     "language_id": null
   },
@@ -35,7 +35,7 @@
     "firebaseKey": "-Ns-AmjieqQK0b2uS-_P",
     "title": "C++",
     "definition": "An object-oriented programming language which gives a clear structure to programs and allows code to be reused, lowering development costs. C++ is portable and can be used to develop applications that can be adapted to multiple platforms.",
-    "timeSubmitted": "2024-01-29 00:18:31",
+    "timeSubmitted": "1709605445483",
     "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43",
     "language_id": null
   },
@@ -43,7 +43,7 @@
     "firebaseKey": "-Ns-Amjj4Q1Kq56F1rmW",
     "title": "Swift",
     "definition": "An open-source programming language that is easy to learn, Swift supports almost everything from the programming language Objective-C. Swift requires fewer coding skills compared with other programming languages, and it can be used with IBM Swift Sandbox and IBM Bluemix. ",
-    "timeSubmitted": "2023-08-24 10:43:42",
+    "timeSubmitted": "1709605454038",
     "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43",
     "language_id": null
   },
@@ -51,7 +51,7 @@
     "firebaseKey": "-Ns-Amjky2ptI4Kx92nL",
     "title": "Perl, 2nd account",
     "definition": "The language is dynamic with innovative features that make it popular and different from what is available on Linux and Windows Server. Websites with high traffic usually use Perl, including IMDB, as it helps in text manipulation tasks.",
-    "timeSubmitted": "2024-02-29 08:31:29",
+    "timeSubmitted": "1709605465398",
     "uid": "OL4mnRmgSHceyYX79WHJoMZrvlV2",
     "language_id": null
   },
@@ -59,7 +59,7 @@
     "firebaseKey": "-Ns-Amjl8cJQ9pcd8sF7",
     "title": "HTML, 2nd account",
     "definition": "The standard language for creating web pages and applications. HTML is used to create web pages. You can use HTML to add images, links, and other types of content to your web page. HTML is a simple programming language; you don't need to know much about it to create a basic web page.",
-    "timeSubmitted": "2023-03-09 00:27:34",
+    "timeSubmitted": "1709605499554",
     "uid": "OL4mnRmgSHceyYX79WHJoMZrvlV2",
     "language_id": null
   },
@@ -67,7 +67,7 @@
     "firebaseKey": "-Ns-Amjm0oTTJ5156WUA",
     "title": "This should not be seen",
     "definition": "Something is wrong if you see this",
-    "timeSubmitted": "2023-10-24 02:14:15",
+    "timeSubmitted": "1709605442211",
     "uid": "",
     "language_id": null
   },
@@ -75,7 +75,7 @@
     "firebaseKey": "-Ns-Amjo_q7rp4sYLX9x",
     "title": "Rust, 2nd account",
     "definition": "A programming language designed to be safe, concurrent, and practical. It is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. Rust is also memory-efficient: it uses minimal memory, making it ideal for embedded systems.",
-    "timeSubmitted": "2023-11-23 19:41:21",
+    "timeSubmitted": "1709605444880",
     "uid": "OL4mnRmgSHceyYX79WHJoMZrvlV2",
     "language_id": null
   }
