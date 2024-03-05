@@ -2,13 +2,14 @@ import { createLanguage, getLanguages, updateLanguage } from '../api/languageDat
 import { showLanguages } from '../pages/languages';
 
 const formEvents = (uid) => {
+  // event listener to submit a new language
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-language')) {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
-        timeSubmitted: document.querySelector('#time').value,
+        timeSubmitted: Date.now(),
         language_id: document.querySelector('#language_id'),
         uid,
       };
@@ -20,7 +21,19 @@ const formEvents = (uid) => {
       });
     }
 
-    // next event
+    // edit/update event
+    if (e.target.id.includes('update-language')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#title').value,
+        definition: document.querySelector('#description').value,
+        timeSubmitted: Date.now(),
+        firebaseKey
+      };
+      updateLanguage(payload).then(() => {
+        getLanguages(uid).then(showLanguages);
+      });
+    }
   });
 };
 

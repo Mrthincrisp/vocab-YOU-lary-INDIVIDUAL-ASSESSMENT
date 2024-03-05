@@ -5,7 +5,7 @@ import navBar from '../components/shared/navBar';
 import { showLanguages } from '../pages/languages';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
-// import navigationEvents from '../events/navigationEvents';
+import navigationEvents from '../events/navEvents';
 
 const startApp = (uid) => {
   domBuilder(uid); // BUILD THE DOM
@@ -13,7 +13,7 @@ const startApp = (uid) => {
   formEvents(uid); // ADD FORM EVENT LISTENTERS TO THE DOM
   navBar(); // DYNAMICALLY ADD THE NAV
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
-  // navigationEvents(uid); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
+  navigationEvents(uid); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
   getLanguages(uid).then(showLanguages);
 };
 

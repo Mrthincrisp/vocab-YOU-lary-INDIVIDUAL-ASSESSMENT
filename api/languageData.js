@@ -2,6 +2,7 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
+// get all languages
 const getLanguages = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
@@ -14,6 +15,7 @@ const getLanguages = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// delete a language
 const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -26,6 +28,7 @@ const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// create a language
 const createLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages.json`, {
     method: 'POST',
@@ -39,6 +42,7 @@ const createLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// update/edit a language
 const updateLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -51,10 +55,23 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
+// get a single language
+const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/languages/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
 
 export {
   getLanguages,
   deleteLanguage,
   createLanguage,
   updateLanguage,
+  getSingleLanguage
 };
