@@ -1,15 +1,17 @@
-import { getVocab, showLang, showTech } from '../api/languageData';
+import { getVocab } from '../api/languageData';
+import { getLanguages } from '../api/vocabData';
 import addLanguageForm from '../components/forms/languageForm';
-import { emptyLanguages, showLanguages } from '../pages/languages';
+import { emptyVocabs, showVocabs } from '../pages/languages';
+import viewLanguage from '../pages/viewLanguage';
 import clearDom from '../utils/clearDom';
 
 const navigationEvents = (uid) => {
   document.querySelector('#all-entries').addEventListener('click', () => {
     getVocab(uid).then((response) => {
       if (response.length > 0) {
-        showLanguages(response);
+        showVocabs(response);
       } else {
-        emptyLanguages();
+        emptyVocabs();
       }
     });
   });
@@ -19,22 +21,22 @@ const navigationEvents = (uid) => {
     addLanguageForm(uid);
   });
 
-  document.querySelector('#technologies').addEventListener('click', () => {
-    showTech(uid).then((response) => {
+  document.querySelector('#vocabs').addEventListener('click', () => {
+    getVocab(uid).then((response) => {
       if (response.length > 0) {
-        showLanguages(response);
+        showVocabs(response);
       } else {
-        emptyLanguages();
+        emptyVocabs();
       }
     });
   });
 
   document.querySelector('#languages').addEventListener('click', () => {
-    showLang(uid).then((response) => {
+    getLanguages(uid).then((response) => {
       if (response.length > 0) {
-        showLanguages(response);
+        viewLanguage(response);
       } else {
-        emptyLanguages();
+        emptyVocabs();
       }
     });
   });

@@ -13,14 +13,6 @@ const addLanguageForm = (obj = {}) => {
         <label for="image" style="color: white">Description</label>
         <input type="text" class="form-control" id="description" placeholder="description" value="${obj.definition || ''}"required>
       </div>
-      <div class="form-group">
-        <label for="type" style="color: white">Type</label>
-         <select class="form-control" id="type" required>
-          <option value="">Select a Type</option>
-          <option value="Technology">Technology</option>
-          <option value="Language">Language</option>
-         </select>
-      </div>
 
       <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Entry' : 'Submit Entry'}</button>
     </form>
@@ -30,3 +22,14 @@ const addLanguageForm = (obj = {}) => {
 };
 
 export default addLanguageForm;
+
+/*
+ <div class="form-group">
+        <label for="type" style="color: white">Type</label>
+         <select class="form-control" id="type" required>
+          <option value="">Select a Type</option>
+          <option value="Technology">Technology</option>
+          <option value="Language">Language</option>
+         </select>
+      </div>
+*/
