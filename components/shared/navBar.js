@@ -12,19 +12,16 @@ const navBar = () => {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#" id="all-languages">
-                Languages <span class="sr-only">(current)</span>
+              <a class="nav-link" href="#" id="all-entries">
+                All Entries <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" id="technologies">Technologies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="tbd">See Navbar to change</a>
+              <a class="nav-link" href="#" id="languages">Languages</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#" id="tbd">See Navbar to change</a>
-          </li>
             <li>
             <input
               class="form-control mr-sm-2"
