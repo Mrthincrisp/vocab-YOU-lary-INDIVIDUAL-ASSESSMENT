@@ -1,4 +1,4 @@
-import { deleteLanguage, getLanguages, getSingleLanguage } from '../api/languageData';
+import { deleteLanguage, getVocab, getSingleLanguage } from '../api/languageData';
 import addLanguageForm from '../components/forms/languageForm';
 import { showLanguages } from '../pages/languages';
 import viewLanguage from '../pages/viewLanguage';
@@ -14,7 +14,7 @@ const domEvents = (uid) => {
       if (window.confirm("That's gonna delete it... Are you sure?")) {
         const [, firebaseKey] = e.target.id.split('--');
         deleteLanguage(firebaseKey).then(() => {
-          getLanguages(uid).then(showLanguages);
+          getVocab(uid).then(showLanguages);
         });
       }
     }

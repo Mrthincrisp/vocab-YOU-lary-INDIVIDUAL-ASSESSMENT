@@ -1,4 +1,4 @@
-import { createLanguage, getLanguages, updateLanguage } from '../api/languageData';
+import { createLanguage, getVocab, updateLanguage } from '../api/languageData';
 import { showLanguages } from '../pages/languages';
 
 const formEvents = (uid) => {
@@ -17,7 +17,7 @@ const formEvents = (uid) => {
       createLanguage(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateLanguage(patchPayload).then(() => {
-          getLanguages(uid).then(showLanguages);
+          getVocab(uid).then(showLanguages);
         });
       });
     }
@@ -33,7 +33,7 @@ const formEvents = (uid) => {
         firebaseKey
       };
       updateLanguage(payload).then(() => {
-        getLanguages(uid).then(showLanguages);
+        getVocab(uid).then(showLanguages);
       });
     }
   });

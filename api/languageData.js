@@ -2,9 +2,9 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-// get all languages
-const getLanguages = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languages.json?orderBy="uid"&equalTo="${uid}"`, {
+// get all entries
+const getVocab = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -15,9 +15,9 @@ const getLanguages = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// delete a language
+// delete an entry
 const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languages/${firebaseKey}.json`, {
+  fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -28,9 +28,9 @@ const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// create a language
+// create an entry
 const createLanguage = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languages.json`, {
+  fetch(`${endpoint}/vocab.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -42,9 +42,9 @@ const createLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// update/edit a language
+// update/edit an entry
 const updateLanguage = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languages/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/vocab/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -55,9 +55,9 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
-// get a single language
+// get an entry
 const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languages/${firebaseKey}.json`, {
+  fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -68,10 +68,26 @@ const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// Tech filter
+const showTech = async (uid) => {
+  const entries = await getVocab(uid);
+  const tech = await entries.filter((item) => item.type === 'Technology');
+  return tech;
+};
+
+// Language filter
+const showLang = async (uid) => {
+  const entries = await getVocab(uid);
+  const lang = await entries.filter((item) => item.type === 'Language');
+  return lang;
+};
+
 export {
-  getLanguages,
+  getVocab,
   deleteLanguage,
   createLanguage,
   updateLanguage,
-  getSingleLanguage
+  getSingleLanguage,
+  showTech,
+  showLang
 };
