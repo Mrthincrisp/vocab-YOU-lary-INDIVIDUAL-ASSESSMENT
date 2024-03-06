@@ -6,16 +6,23 @@ const addLanguageForm = (obj = {}) => {
   const domString = `
   <form id="${obj.firebaseKey ? `update-language--${obj.firebaseKey}` : 'submit-language'}" class="mb-4">
       <div class="form-group">
-        <label for="image">Language Name</label>
+        <label for="image" style="color: white">Name</label>
         <input type="text" class="form-control" id="title" placeholder="Language" value="${obj.title || ''}" required>
       </div>
       <div class="form-group">
-        <label for="image">Description</label>
+        <label for="image" style="color: white">Description</label>
         <input type="text" class="form-control" id="description" placeholder="description" value="${obj.definition || ''}"required>
       </div>
       <div class="form-group">
+        <label for="type" style="color: white">Type</label>
+         <select class="form-control" id="type" required>
+          <option value="">Select a Type</option>
+          <option value="Technology">Technology</option>
+          <option value="Language">Language</option>
+         </select>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Language' : 'Submit Language'}</button>
+
+      <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Entry' : 'Submit Entry'}</button>
     </form>
 `;
 
