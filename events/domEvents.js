@@ -1,7 +1,7 @@
-import { deleteLanguage, getVocab, getSingleLanguage } from '../api/languageData';
+import { deleteVocab, getVocab, getSingleVocab } from '../api/languageData';
 import addLanguageForm from '../components/forms/languageForm';
-import { showLanguages } from '../pages/languages';
-import viewLanguage from '../pages/viewLanguage';
+import { showVocabs } from '../pages/languages';
+import showdetails from '../pages/showdetails';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -9,25 +9,25 @@ const domEvents = (uid) => {
       addLanguageForm(uid);
     }
     // Delete event
-    if (e.target.id.includes('delete-language')) {
+    if (e.target.id.includes('delete-vocab')) {
       // eslint-disable-next-line no-alert
       if (window.confirm("That's gonna delete it... Are you sure?")) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteLanguage(firebaseKey).then(() => {
-          getVocab(uid).then(showLanguages);
+        deleteVocab(firebaseKey).then(() => {
+          getVocab(uid).then(showVocabs);
         });
       }
     }
     // View event
-    if (e.target.id.includes('view-language-btn')) {
+    if (e.target.id.includes('view-vocab-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleLanguage(firebaseKey).then(viewLanguage);
+      getSingleVocab(firebaseKey).then(showdetails);
     }
 
     // Edit event
-    if (e.target.id.includes('update-language')) {
+    if (e.target.id.includes('update-vocab')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleLanguage(firebaseKey).then((authorObj) => addLanguageForm(authorObj, uid));
+      getSingleVocab(firebaseKey).then((authorObj) => addLanguageForm(authorObj, uid));
     }
   });
 };

@@ -4,7 +4,7 @@ const navBar = () => {
   const domString = `
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
-        <a class="navbar-brand title" href="#">Lang-y-Tech </a>
+        <a class="navbar-brand title" href="https://looks.wtf/">(ノಠ益ಠ)ノ </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +17,7 @@ const navBar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="technologies">Technologies</a>
+              <a class="nav-link" href="#" id="vocabs">Vocabs</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" id="languages">Languages</a>

@@ -1,52 +1,52 @@
 {
   "-NsGmSjhUAz4JOzPUtax": {
-    "firebaseKey": 1,
+    "firebaseKey": "-NsGmSjhUAz4JOzPUtax",
     "title": "JS",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjiswtm112o4uZ7": {
-    "firebaseKey": 2,
+    "firebaseKey": "-NsGmSjiswtm112o4uZ7",
     "title": "Python",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjiswtm112o4uZ8": {
-    "firebaseKey": 3,
+    "firebaseKey": "-NsGmSjiswtm112o4uZ8",
     "title": "C#",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjiswtm112o4uZ9": {
-    "firebaseKey": 4,
+    "firebaseKey": "-NsGmSjiswtm112o4uZ9",
     "title": "SQL",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjiswtm112o4uZA": {
-    "firebaseKey": 5,
+    "firebaseKey": "-NsGmSjiswtm112o4uZA",
     "title": "C++",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjjeQSGnrhbDSQP": {
-    "firebaseKey": 6,
+    "firebaseKey": "-NsGmSjjeQSGnrhbDSQP",
     "title": "Swift",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjjeQSGnrhbDSQQ": {
-    "firebaseKey": 7,
+    "firebaseKey": "-NsGmSjjeQSGnrhbDSQQ",
     "title": "Perl",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjjeQSGnrhbDSQR": {
-    "firebaseKey": 8,
+    "firebaseKey": "-NsGmSjjeQSGnrhbDSQQ",
     "title": "HTML",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjjeQSGnrhbDSQS": {
-    "firebaseKey": 9,
+    "firebaseKey": "-NsGmSjjeQSGnrhbDSQS",
     "title": "Rust",
-    "uid": null
+    "uid": "MjLYOFnhvbZHtBDQHnKCa4hnIN43"
   },
   "-NsGmSjkZx3W2zyXrFRt": {
-    "firebaseKey": 10,
-    "title": null,
-    "uid": null
+    "firebaseKey": "-NsGmSjkZx3W2zyXrFRt",
+    "title": "I should have no uid, so if you see me...",
+    "uid": ""
   }
 }

@@ -16,7 +16,7 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
 });
 
 // delete an entry
-const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
@@ -29,7 +29,7 @@ const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // create an entry
-const createLanguage = (payload) => new Promise((resolve, reject) => {
+const createVocab = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab.json`, {
     method: 'POST',
     headers: {
@@ -43,7 +43,7 @@ const createLanguage = (payload) => new Promise((resolve, reject) => {
 });
 
 // update/edit an entry
-const updateLanguage = (payload) => new Promise((resolve, reject) => {
+const updateVocab = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
@@ -56,7 +56,7 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 // get an entry
-const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
@@ -84,10 +84,10 @@ const showLang = async (uid) => {
 
 export {
   getVocab,
-  deleteLanguage,
-  createLanguage,
-  updateLanguage,
-  getSingleLanguage,
+  deleteVocab,
+  createVocab,
+  updateVocab,
+  getSingleVocab,
   showTech,
   showLang
 };
