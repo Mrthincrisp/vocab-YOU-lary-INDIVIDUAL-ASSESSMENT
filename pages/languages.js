@@ -1,3 +1,4 @@
+import { getLanguages } from '../api/vocabData';
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
 
@@ -7,18 +8,21 @@ const emptyVocabs = () => {
   renderToDOM('#vocab', domString);
 };
 // display cards for vocab data
-const showVocabs = (array) => {
+const showVocabs = async (array, uid) => {
   clearDom();
 
   let domString = '';
-  array.sort((a, b) => b.timeSubmitted - a.timeSubmitted);
+  const languages = await getLanguages(uid);
+  // array.sort((a, b) => b.timeSubmitted - a.timeSubmitted);
 
   array.forEach((item) => {
+    const singleLanguage = languages.find((lang) => lang.firebaseKey === item.language_id);
     domString += `
     <div class="card-box">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${item.title}</h5>
+          <h5 id="language-id">${singleLanguage.title}</h5>
             <hr>
             <i class="btn btn-success" id="view-vocab-btn--${item.firebaseKey}">Details</span></i>
             <i class="btn btn-info" id="update-vocab-btn--${item.firebaseKey}">Edit</i>

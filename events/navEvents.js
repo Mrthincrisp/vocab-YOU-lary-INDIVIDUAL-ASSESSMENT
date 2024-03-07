@@ -3,13 +3,12 @@ import { getLanguages } from '../api/vocabData';
 import addLanguageForm from '../components/forms/languageForm';
 import { emptyVocabs, showVocabs } from '../pages/languages';
 import viewLanguage from '../pages/viewLanguage';
-import clearDom from '../utils/clearDom';
 
 const navigationEvents = (uid) => {
   document.querySelector('#all-entries').addEventListener('click', () => {
     getVocab(uid).then((response) => {
       if (response.length > 0) {
-        showVocabs(response);
+        showVocabs(response, uid);
       } else {
         emptyVocabs();
       }
@@ -17,14 +16,13 @@ const navigationEvents = (uid) => {
   });
 
   document.querySelector('#add-entry-btn').addEventListener('click', () => {
-    clearDom();
     addLanguageForm(uid);
   });
 
   document.querySelector('#vocabs').addEventListener('click', () => {
     getVocab(uid).then((response) => {
       if (response.length > 0) {
-        showVocabs(response);
+        showVocabs(response, uid);
       } else {
         emptyVocabs();
       }

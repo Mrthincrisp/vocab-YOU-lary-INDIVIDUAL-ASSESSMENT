@@ -14,7 +14,7 @@ const startApp = (uid) => {
   navBar(); // DYNAMICALLY ADD THE NAV
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
   navigationEvents(uid); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
-  getVocab(uid).then(showVocabs);
+  getVocab(uid).then((vocab) => showVocabs(vocab, uid));
 };
 
 export default startApp;

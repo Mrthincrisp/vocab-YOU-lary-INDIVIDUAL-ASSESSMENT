@@ -9,15 +9,14 @@ const formEvents = (uid) => {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
-        language_id: document.querySelector('#language_id'),
-        // type: document.querySelector('#type').value,
+        language_id: document.querySelector('#language-id').value,
         timeSubmitted: Date.now(),
         uid,
       };
       createVocab(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateVocab(patchPayload).then(() => {
-          getVocab(uid).then(showVocabs);
+          getVocab(uid).then((vocab) => showVocabs(vocab, uid));
         });
       });
     }
@@ -28,12 +27,13 @@ const formEvents = (uid) => {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
-        //  type: document.querySelector('#type').value,
+        language_id: document.querySelector('#language-id').value,
         timeSubmitted: Date.now(),
+        uid,
         firebaseKey
       };
       updateVocab(payload).then(() => {
-        getVocab(uid).then(showVocabs);
+        getVocab(uid).then((vocab) => showVocabs(vocab, uid));
       });
     }
   });
