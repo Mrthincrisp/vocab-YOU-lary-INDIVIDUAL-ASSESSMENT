@@ -14,7 +14,7 @@ const domEvents = (uid) => {
       if (window.confirm("That's gonna delete it... Are you sure?")) {
         const [, firebaseKey] = e.target.id.split('--');
         deleteVocab(firebaseKey).then(() => {
-          getVocab(uid).then(showVocabs);
+          getVocab(uid).then((vocab) => showVocabs(vocab, uid));
         });
       }
     }
@@ -27,7 +27,7 @@ const domEvents = (uid) => {
     // Edit event
     if (e.target.id.includes('update-vocab')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleVocab(firebaseKey).then((authorObj) => addLanguageForm(authorObj, uid));
+      getSingleVocab(firebaseKey).then((langObj) => addLanguageForm(uid, langObj));
     }
   });
 };

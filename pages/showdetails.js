@@ -12,8 +12,8 @@ const showdetails = (obj) => {
           <h5 class="card-title">${obj.title}</h5>
           <p>${obj.definition}</p>
             <hr>
-            <i class="btn btn-info" id="update-language-btn--${obj.firebaseKey}">Edit</i>
-            <i class="btn btn-danger" id="delete-language-btn--${obj.firebaseKey}">Delete</i>
+            <i class="btn btn-info" id="update-vocab-btn--${obj.firebaseKey}">Edit</i>
+            <i class="btn btn-danger" id="delete-vocab-btn--${obj.firebaseKey}">Delete</i>
         </div>
         </div>
       </div>`;
