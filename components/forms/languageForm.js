@@ -2,6 +2,7 @@ import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
 import selectLanguage from './selectLanguage';
 
+// form that pops up when updating or submitting a new language, not curently useable
 const addLanguageForm = (uid, obj = {}) => {
   clearDom();
   console.warn(obj);

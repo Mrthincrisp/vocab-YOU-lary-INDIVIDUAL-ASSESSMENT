@@ -32,12 +32,11 @@ const navigationEvents = (uid) => {
   document.querySelector('#languages').addEventListener('click', () => {
     getLanguages(uid).then((response) => {
       if (response.length > 0) {
-        viewLanguage(response);
+        viewLanguage(response, uid);
       } else {
         emptyVocabs();
       }
     });
   });
 };
-
 export default navigationEvents;
