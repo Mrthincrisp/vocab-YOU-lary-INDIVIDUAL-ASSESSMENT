@@ -1,6 +1,8 @@
-import { deleteVocab, getVocab, getSingleVocab } from '../api/languageData';
+import {
+  deleteVocab, getVocab, getSingleVocab, selectFilter
+} from '../api/languageData';
 import addLanguageForm from '../components/forms/languageForm';
-import { showVocabs } from '../pages/languages';
+import { emptyVocabs, showVocabs } from '../pages/languages';
 import showdetails from '../pages/showdetails';
 
 const domEvents = (uid) => {
@@ -30,6 +32,21 @@ const domEvents = (uid) => {
       getSingleVocab(firebaseKey).then((langObj) => addLanguageForm(uid, langObj));
     }
   });
-};
 
+  document.querySelector('#main-container').addEventListener('change', (e) => {
+    if (e.target.id === 'select-language') {
+      const selectedItem = e.target.value;
+      if (selectedItem) {
+        console.warn(selectedItem);
+        selectFilter(uid, selectedItem).then((response) => {
+          if (response.length > 0) {
+            showVocabs(response, uid);
+          } else {
+            emptyVocabs();
+          }
+        });
+      }
+    }
+  });
+};
 export default domEvents;

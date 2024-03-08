@@ -2,6 +2,7 @@
 import { getLanguages } from '../../api/vocabData';
 import renderToDOM from '../../utils/renderToDom';
 
+// creates the select menu for language items
 const selectLanguage = (uid, language_id) => {
   let domString = `
   <label for="language" style="color: white">Select Language</label>

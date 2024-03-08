@@ -68,18 +68,11 @@ const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// Tech filter
-const showTech = async (uid) => {
-  const entries = await getVocab(uid);
-  const tech = await entries.filter((item) => item.type === 'Technology');
-  return tech;
-};
-
-// Language filter
-const showLang = async (uid) => {
-  const entries = await getVocab(uid);
-  const lang = await entries.filter((item) => item.type === 'Language');
-  return lang;
+// language filter
+const selectFilter = async (uid, languageId) => {
+  const cSharp = await getVocab(uid);
+  const sfilter = await cSharp.filter((item) => item.language_id === languageId);
+  return sfilter;
 };
 
 export {
@@ -88,6 +81,5 @@ export {
   createVocab,
   updateVocab,
   getSingleVocab,
-  showTech,
-  showLang
+  selectFilter
 };
